@@ -5,6 +5,7 @@ const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
+const modal = document.querySelector(".modal");
 
 fetch(urlAPI)
     .then(res => res.json())
@@ -16,11 +17,15 @@ function displayEmployees(employeeData) {
     employees = employeeData;
     let employeeHTML = "";
 
+
     employees.forEach((employee, index) => {
+
         let name = employee.name;
         let email = employee.email;
         let city = employee.location.city;
         let picture = employee.picture;
+
+
 
         employeeHTML += `
             <div class="card data-index="${index}">
@@ -67,11 +72,12 @@ gridContainer.addEventListener('click', e => {
         const card = e.target.closest(".card");
         const index = card.getAttribute('data-index');
 
-        displayModal(index);
+
+        displayModal(Number(index));
     }
 
 });
 
 modalClose.addEventListener('click', () => {
-    modalClose.classList.add("hidden");
+    overlay.classList.add("hidden");
 });
