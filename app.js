@@ -6,6 +6,9 @@ const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
 const modal = document.querySelector(".modal");
+const employeeSearch = document.querySelector("#search-employees");
+const modalChange = document.querySelector(".change-modal");
+const textContainer = modal.querySelector(".text-container");
 
 fetch(urlAPI)
     .then(res => res.json())
@@ -28,7 +31,7 @@ function displayEmployees(employeeData) {
 
 
         employeeHTML += `
-            <div class="card data-index="${index}">
+            <div class="card" data-index="${index}">
                 <img class="avatar" src="${picture.large}"/>
                 <div class="text-container">
                     <h2 class="name">${name.first} ${name.last}</h2>
@@ -54,17 +57,21 @@ function displayModal(index) {
     const modalHTML = `
         <img class="avatar" src="${picture.large}"/>
         <div class="text-container">
+            <div class="change-modal-container">
             <h2 class="name">${name.first} ${name.last}</h2>
+           
+            </div>
             <p class="email">${email}</p>
             <p class="address">${city}</p>
             <hr />
             <p class="phone">${phone}</p>
-            <p class="address">${street}, ${state} ${postcode}</p>
+            <p class="address">${street.name}, ${state} ${postcode}</p>
             <p class="birthday">${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
-    `
+    `;
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
+
 }
 
 gridContainer.addEventListener('click', e => {
@@ -80,4 +87,28 @@ gridContainer.addEventListener('click', e => {
 
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
+});
+
+//create a function that goes to the next employee when an 
+//arrow is clicked
+//Get the currently instantiated employees
+
+
+
+modal.addEventListener('click', e => {
+
+    if (modalChange) {
+     
+       
+        
+        console.log("clicked");
+       
+
+    }
+ 
+        //I'm trying to get the index value of the NEXT array item
+      
+        // const index = currentCard.getAttribute('data-index');
+        // displayModal(Number(index));
+ 
 });

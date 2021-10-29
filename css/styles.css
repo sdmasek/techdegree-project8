@@ -24,6 +24,11 @@ h1{
     margin: 0;
 }
 
+#search-employees{
+    border-color:#778;
+    padding: 1rem;
+}
+
 #search-employees:placeholder-shown{
     font-style: italic;
 }
@@ -48,6 +53,8 @@ h1{
 }
 
 .modal{
+    display: flex;
+    flex-direction: column;
     width: 80%;
     margin: 50% auto;
     position: relative;
@@ -69,7 +76,30 @@ h1{
     border: none;
     background: #fff;
     font-weight: bold;
+}
+
+.modal-close, .card, .change-modal{
     cursor: pointer;
+}
+
+
+
+.change-modal{
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    position: absolute;
+}
+
+.left{
+    top: 55px;
+    left: 25px;
+   
+}
+.right{
+    
+    top: 55px;
+    right: 25px;
 }
 
 .card{
