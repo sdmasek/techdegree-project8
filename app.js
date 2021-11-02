@@ -39,7 +39,7 @@ function displayEmployees(employeeData) {
                     <p class="address">${city}</p>
                 </div>
             </div>
-        `
+        `;
     });
 
     gridContainer.innerHTML = employeeHTML;
@@ -75,12 +75,14 @@ function displayModal(index) {
 }
 
 gridContainer.addEventListener('click', e => {
-    if (e !== gridContainer) {
-        const card = e.target.closest(".card");
-        const index = card.getAttribute('data-index');
-
-
-        displayModal(Number(index));
+    const card = e.target.closest(".card");
+    const index = card.getAttribute('data-index');
+    if (card) {
+        // displayModal(Number(index));
+        console.log("card was clicked");
+    } else {
+        card.removeAttribute('data-index');
+        console.log("no card was clicked");
     }
 
 });
@@ -98,17 +100,17 @@ modalClose.addEventListener('click', () => {
 modal.addEventListener('click', e => {
 
     if (modalChange) {
-     
-       
-        
+
+
+
         console.log("clicked");
-       
+
 
     }
- 
-        //I'm trying to get the index value of the NEXT array item
-      
-        // const index = currentCard.getAttribute('data-index');
-        // displayModal(Number(index));
- 
+
+    //I'm trying to get the index value of the NEXT array item
+
+    // const index = currentCard.getAttribute('data-index');
+    // displayModal(Number(index));
+
 });
