@@ -78,7 +78,7 @@ gridContainer.addEventListener('click', e => {
     const card = e.target.closest(".card");
     const index = card.getAttribute('data-index');
     if (card) {
-        // displayModal(Number(index));
+        displayModal(Number(index));
         console.log("card was clicked");
     } else {
         card.removeAttribute('data-index');
