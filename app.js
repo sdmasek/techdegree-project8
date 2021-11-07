@@ -75,14 +75,13 @@ function displayModal(index) {
 }
 
 gridContainer.addEventListener('click', e => {
-    const card = e.target.closest(".card");
-    const index = card.getAttribute('data-index');
-    if (card) {
-        displayModal(Number(index));
+
+    if (e.target !== gridContainer) {
+        const card = e.target.closest(".card");
+        const index = card.getAttribute('data-index');
+
         console.log("card was clicked");
-    } else {
-        card.removeAttribute('data-index');
-        console.log("no card was clicked");
+        displayModal(Number(index));
     }
 
 });
@@ -95,22 +94,21 @@ modalClose.addEventListener('click', () => {
 //arrow is clicked
 //Get the currently instantiated employees
 
-
-
 modal.addEventListener('click', e => {
 
     if (modalChange) {
-
-
-
+        //get the current employee data
+        for (let i = 0; i < employees.length; i++) {
+            let currentEmployee = employees[i];
+            console.log(currentEmployee);
+        }
         console.log("clicked");
-
 
     }
 
-    //I'm trying to get the index value of the NEXT array item
-
-    // const index = currentCard.getAttribute('data-index');
-    // displayModal(Number(index));
 
 });
+
+
+
+
