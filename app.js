@@ -7,7 +7,9 @@ const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
 const modal = document.querySelector(".modal");
 const employeeSearch = document.querySelector("#search-employees");
-const modalChange = document.querySelector(".change-modal");
+// const modalChange = document.querySelector(".change-modal");
+const modalArrowLeft = document.querySelector(".change-modal-left");
+const modalArrowRight = document.querySelector(".change-modal-right");
 const textContainer = modal.querySelector(".text-container");
 
 fetch(urlAPI)
@@ -94,20 +96,39 @@ modalClose.addEventListener('click', () => {
 //arrow is clicked
 //Get the currently instantiated employees
 
-modal.addEventListener('click', e => {
 
-    if (modalChange) {
-        //get the current employee data
-        for (let i = 0; i < employees.length; i++) {
-            let currentEmployee = employees[i];
-            console.log(currentEmployee);
+modal.addEventListener('click', e => {
+    //get the element that holds the current email displayed on modal
+    let getCurrentModalEmail = document.getElementsByClassName('text-container')
+    [12].getElementsByClassName('email')[0].innerHTML;
+
+
+
+    // if (e.target === modalArrowLeft || modalArrowRight) {
+    for (let i = 0; i < employees.length; i++) {
+        if (getCurrentModalEmail === employees[i].email) {
+            //console.log(employees[i].email);
+            // if (modalArrowRight) {
+
+            //     console.log(employees[i + 1].email);
+            // }
+            if (e.target === modalArrowLeft) {
+                console.log(employees[i - 1].email);
+            }
+            if (e.target === modalArrowRight) {
+                console.log(employees[i + 1].email);
+            }
+
         }
-        console.log("clicked");
+        // }
+
 
     }
 
 
+
 });
+
 
 
 

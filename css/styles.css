@@ -82,23 +82,18 @@ h1{
     cursor: pointer;
 }
 
-
-
-.change-modal{
+.change-modal-left, .change-modal-right{
     font-size: 1.5rem;
     font-weight: bold;
     border: none;
     position: absolute;
-}
-
-.left{
     top: 55px;
-    left: 25px;
    
 }
-.right{
-    
-    top: 55px;
+.change-modal-left{
+    left: 25px;
+}
+.change-modal-right{
     right: 25px;
 }
 
