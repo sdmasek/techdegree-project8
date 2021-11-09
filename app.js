@@ -101,33 +101,35 @@ modal.addEventListener('click', e => {
     //get the element that holds the current email displayed on modal
     let getCurrentModalEmail = document.getElementsByClassName('text-container')
     [12].getElementsByClassName('email')[0].innerHTML;
+    //create an empty index that the new modal will fill
+    let targetIndex = null;
 
+    if (e.target === modalArrowLeft) {
 
-
-    // if (e.target === modalArrowLeft || modalArrowRight) {
-    for (let i = 0; i < employees.length; i++) {
-        if (getCurrentModalEmail === employees[i].email) {
-            //console.log(employees[i].email);
-            // if (modalArrowRight) {
-
-            //     console.log(employees[i + 1].email);
-            // }
-            if (e.target === modalArrowLeft) {
-                console.log(employees[i - 1].email);
+        for (let i = 0; i < 11; i++) {
+            if (getCurrentModalEmail === employees[i].email && i !== 0) {
+                targetIndex = i - 1;
+                console.log(targetIndex);
+                // displayModal(targetIndex);
             }
-            if (e.target === modalArrowRight) {
-                console.log(employees[i + 1].email);
-            }
-
         }
-        // }
+    }
 
-
+    if (e.target === modalArrowRight) {
+        for (let i = 0; i < 11; i++) {
+            if (getCurrentModalEmail === employees[i].email && i !== 11) {
+                targetIndex = i + 1;
+                console.log(targetIndex);
+                // displayModal(targetIndex);
+            }
+        }
     }
 
 
 
 });
+
+
 
 
 
