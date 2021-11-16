@@ -110,7 +110,7 @@ modal.addEventListener('click', e => {
             if (getCurrentModalEmail === employees[i].email && i !== 0) {
                 targetIndex = i - 1;
                 console.log(targetIndex);
-                // displayModal(targetIndex);
+                displayModal(targetIndex);
             }
         }
     }
@@ -120,14 +120,29 @@ modal.addEventListener('click', e => {
             if (getCurrentModalEmail === employees[i].email && i !== 11) {
                 targetIndex = i + 1;
                 console.log(targetIndex);
-                // displayModal(targetIndex);
+                displayModal(targetIndex);
             }
         }
     }
 
-
-
 });
+
+//Search the employee directory by requesting a random user nationality that returns
+//only data in the english alphabet (So a regex [A-Za-z])
+
+//the search should take place in the grid container
+//a keyup eventlistner should be added to the search element
+
+function filterEmployees() {
+    employees.filter(nationality => {
+        return nationality[A - Za - z]
+    });
+}
+
+console.log(filterEmployees());
+
+
+
 
 
 
