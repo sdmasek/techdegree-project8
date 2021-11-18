@@ -7,7 +7,6 @@ const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
 const modal = document.querySelector(".modal");
 const employeeSearch = document.querySelector("#search-employees");
-// const modalChange = document.querySelector(".change-modal");
 const modalArrowLeft = document.querySelector(".change-modal-left");
 const modalArrowRight = document.querySelector(".change-modal-right");
 const textContainer = modal.querySelector(".text-container");
@@ -133,13 +132,21 @@ modal.addEventListener('click', e => {
 //the search should take place in the grid container
 //a keyup eventlistner should be added to the search element
 
-function filterEmployees() {
-    employees.filter(nationality => {
-        return nationality[A - Za - z]
-    });
-}
+employeeSearch.addEventListener('keyup', (e) => {
+    //get the name that's stored in each card's text container
+    let search = e.target.value.toLowerCase();
+    let card = document.querySelector(".card");
 
-console.log(filterEmployees());
+    for (let i = 0; i < employees.length; i++) {
+        // let employeeName = card.querySelector(".name");
+        let employeeName = `${employees[i].name.first} ${employees[i].name.last}`;
+        employeeName = employeeName.toString().toLowerCase();
+        if (employeeName.includes(search)) {
+            //either display the employee card or just list their name?
+        }
+    }
+
+});
 
 
 
