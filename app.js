@@ -105,7 +105,7 @@ modal.addEventListener('click', e => {
 
     if (e.target === modalArrowLeft) {
 
-        for (let i = 0; i < 11; i++) {
+        for (let i = 0; i < 12; i++) {
             if (getCurrentModalEmail === employees[i].email && i !== 0) {
                 targetIndex = i - 1;
                 console.log(targetIndex);
@@ -115,7 +115,7 @@ modal.addEventListener('click', e => {
     }
 
     if (e.target === modalArrowRight) {
-        for (let i = 0; i < 11; i++) {
+        for (let i = 0; i < 12; i++) {
             if (getCurrentModalEmail === employees[i].email && i !== 11) {
                 targetIndex = i + 1;
                 console.log(targetIndex);
