@@ -136,13 +136,19 @@ employeeSearch.addEventListener('keyup', (e) => {
     //get the name that's stored in each card's text container
     let search = e.target.value.toLowerCase();
     let card = document.querySelector(".card");
+    let employeeCards = document.getElementsByClassName("card");
 
-    for (let i = 0; i < employees.length; i++) {
-        // let employeeName = card.querySelector(".name");
-        let employeeName = `${employees[i].name.first} ${employees[i].name.last}`;
+    for (let i = 0; i < employeeCards.length; i++) {
+        //get the employee's first and last name to be displayed
+        let employeeName = employeeCards[i].querySelector(".name");
+        employeeName = employeeName.textContent;
         employeeName = employeeName.toString().toLowerCase();
         if (employeeName.includes(search)) {
             //either display the employee card or just list their name?
+            employeeCards[i].style.display = "block";
+
+        } else {
+            employeeCards[i].style.display = "none";
         }
     }
 
