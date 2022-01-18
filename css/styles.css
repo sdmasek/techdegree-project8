@@ -143,10 +143,8 @@ h1{
     }
 
     .heading-container{
-        display: flex;
-       flex-direction: row;
-       justify-content: space-between;
-       width: 90%;
+      
+       width: 50%;
     }
 
     /* h1{
